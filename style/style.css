@@ -1,0 +1,12 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1; /*it allows to browser to calculate line height based on the font size */
+  font-weight: 400; /*control boldness and tickness, 400 is normal font weight, easy to read */
+  color: #555;
+}
