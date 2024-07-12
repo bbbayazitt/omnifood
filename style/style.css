@@ -4,9 +4,27 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: sans-serif;
   line-height: 1; /*it allows to browser to calculate line height based on the font size */
   font-weight: 400; /*control boldness and tickness, 400 is normal font weight, easy to read */
   color: #555;
+}
+
+/* we gonna use css grid because it make it really easy to have 
+equally sized columns.
+to use css grid we need container element for these two boxes (hero-text-box and hero-image-box */
+
+.hero {
+  max-width: 130rem; /* when the element larger than the container it will simply occupy %100 of it  */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hero-image {
+  width: 100%; /* fill the entire parent element which is hero image box  */
 }
