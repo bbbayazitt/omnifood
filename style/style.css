@@ -19,12 +19,85 @@ body {
 equally sized columns.
 to use css grid we need container element for these two boxes (hero-text-box and hero-image-box */
 
+.section-hero {
+  background-color: #fdf2e0;
+  padding: 9.6rem 0; /* space for sections */
+}
 .hero {
   max-width: 130rem; /* when the element larger than the container it will simply occupy %100 of it  */
   display: grid;
+  margin: 0 auto; /* set the top and bottom margins to 0 and left right margin to auto
+  the value 0 for the top and bottom margin means that element sit directly on the baseline of its container without any space above or below it
+  the auto value is pushes the element into center of horizontal space available to it */
   grid-template-columns: 1fr 1fr;
+  gap: 9.6rem; /* same gap space with section hero */
+  align-items: center;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 1.05; /* distance bw lines */
+  letter-spacing: -0.5px; /* we didnt use rem bc of its a small unit and no need to scale up*/
+  margin-bottom: 3.2rem; /* adjust the distance bw heading primary and hero description */
+  color: #333;
+}
+
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem; /* adjust bw the button and hero description element */
+}
+
+/* reason for using .btn:link and .btn:visited elements, you can control their
+apperance and create visually appealing buttons with a specific background color,text
+color etc.*/
+
+.btn:link,
+.btn:visited {
+  display: inline-block; /* allowin other elements to be displayed next to them */
+  background-color: #e67e22;
+  color: #fff;
+  text-decoration: none; /* removes underline */
+  font-size: 2rem;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+  transition: background-color 0.3s; /* when we chose all it means that annimate both background and color, all the properties animated*/
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #e67e22;
+  color: #fff;
+}
+
+/* when you hover on the button change the color darker*/
+.btn--full:hover,
+.btn--full:active {
+  background-color: #cf711f;
+}
+
+/* changed the color of other button to focus the attention on start eating button*/
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fdf2e9;
+  box-shadow: inset 0 0 0 3px #fff;
 }
 
 .hero-image {
   width: 100%; /* fill the entire parent element which is hero image box  */
+}
+
+/* we created helper class on html and adjust it on css
+we could add margin-right directly inside the button but 
+when we use the button for other place it always keep the margin and its not right.
+we could use flexbox or grid but its too much work, helper class is ease of use */
+.margin-right-sm {
+  margin-right: 1.6rem !important;
 }
