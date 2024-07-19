@@ -19,20 +19,9 @@ body {
 equally sized columns.
 to use css grid we need container element for these two boxes (hero-text-box and hero-image-box */
 
-.section-hero {
-  background-color: #fdf2e0;
-  padding: 9.6rem 0; /* space for sections */
-}
-.hero {
-  max-width: 130rem; /* when the element larger than the container it will simply occupy %100 of it  */
-  display: grid;
-  margin: 0 auto; /* set the top and bottom margins to 0 and left right margin to auto
-  the value 0 for the top and bottom margin means that element sit directly on the baseline of its container without any space above or below it
-  the auto value is pushes the element into center of horizontal space available to it */
-  grid-template-columns: 1fr 1fr;
-  gap: 9.6rem; /* same gap space with section hero */
-  align-items: center;
-}
+/*******************/
+/* GENERAL REUSABLE COMPONENTS */
+/*******************/
 
 .heading-primary {
   font-size: 5.2rem;
@@ -42,16 +31,6 @@ to use css grid we need container element for these two boxes (hero-text-box and
   margin-bottom: 3.2rem; /* adjust the distance bw heading primary and hero description */
   color: #333;
 }
-
-.hero-description {
-  font-size: 2rem;
-  line-height: 1.6;
-  margin-bottom: 4.8rem; /* adjust bw the button and hero description element */
-}
-
-/* reason for using .btn:link and .btn:visited elements, you can control their
-apperance and create visually appealing buttons with a specific background color,text
-color etc.*/
 
 .btn:link,
 .btn:visited {
@@ -91,16 +70,61 @@ color etc.*/
   box-shadow: inset 0 0 0 3px #fff;
 }
 
-.hero-image {
-  width: 100%; /* fill the entire parent element which is hero image box  */
-}
-
 /* we created helper class on html and adjust it on css
 we could add margin-right directly inside the button but 
 when we use the button for other place it always keep the margin and its not right.
 we could use flexbox or grid but its too much work, helper class is ease of use */
 .margin-right-sm {
   margin-right: 1.6rem !important;
+}
+
+/*******************/
+/* HEADER*/
+/*******************/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdf2e9;
+
+  height: 9.6rem;
+  padding: 0 4.8rem;
+}
+.logo {
+  height: 2.2rem;
+}
+
+/*******************/
+/* HERO SECTION */
+/*******************/
+.section-hero {
+  background-color: #fdf2e0;
+  padding: 4.8rem 0 9.6rem 0; /* space for sections */
+}
+.hero {
+  max-width: 130rem; /* when the element larger than the container it will simply occupy %100 of it  */
+  display: grid;
+  margin: 0 auto; /* set the top and bottom margins to 0 and left right margin to auto
+  the value 0 for the top and bottom margin means that element sit directly on the baseline of its container without any space above or below it
+  the auto value is pushes the element into center of horizontal space available to it */
+  grid-template-columns: 1fr 1fr;
+  gap: 9.6rem; /* same gap space with section hero */
+  align-items: center;
+}
+
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem; /* adjust bw the button and hero description element */
+}
+
+/* reason for using .btn:link and .btn:visited elements, you can control their
+apperance and create visually appealing buttons with a specific background color,text
+color etc.*/
+
+.hero-image {
+  width: 100%; /* fill the entire parent element which is hero image box  */
 }
 
 .delivered-meals {
